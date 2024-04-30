@@ -1,0 +1,21 @@
+---
+- name: Void config playbook
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Enable nonfree repositories
+      community.general.xbps:
+        name:
+          - void-repo-nonfree
+
+    - name: Enable multilib repositories
+      community.general.xbps:
+        name:
+          - void-repo-multilib
+          - void-repo-multilib-nonfree
+
+  roles:
+    - base
+
+# vim: ft=yaml.ansible ts=2 sts=2 sw=2 et

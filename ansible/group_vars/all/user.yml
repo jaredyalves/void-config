@@ -1,0 +1,5 @@
+---
+user: user
+shell: /usr/bin/fish
+
+# vim: ft=yaml.ansible ts=2 sts=2 sw=2 et

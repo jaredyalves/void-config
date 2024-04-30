@@ -1,0 +1,22 @@
+---
+- name: Install packages
+  community.general.xbps:
+    name: "{{ item }}"
+  loop:
+    - base-devel
+    - fish-shell
+    - starship
+    - xmirror
+    - xtools
+
+- name: Configure root
+  ansible.builtin.user:
+    name: root
+    shell: "{{ shell }}"
+
+- name: Configure user
+  ansible.builtin.user:
+    name: "{{ user }}"
+    shell: "{{ shell }}"
+
+# vim: ft=yaml.ansible ts=2 sts=2 sw=2 et
