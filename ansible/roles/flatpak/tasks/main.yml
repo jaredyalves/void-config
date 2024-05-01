@@ -1,0 +1,23 @@
+---
+- name: Install flatpak
+  community.general.xbps:
+    name: flatpak
+
+- name: Make sure the flathub repo is present
+  community.general.flatpak_remote:
+    name: "{{ item.name }}"
+    flatpakrepo_url: "{{ item.repo }}"
+    state: present
+  loop:
+    - { name: "flathub", repo: "https://dl.flathub.org/repo/flathub.flatpakrepo" }
+    - { name: "flathub-beta", repo: "https://flathub.org/beta-repo/flathub-beta.flatpakrepo" }
+
+- name: Install flatpak packages
+  community.general.flatpak:
+    name: "{{ item }}"
+    remote: flathub
+  loop:
+    - com.slack.Slack
+    - io.github.spacingbat3.webcord
+
+# vim: ft=yaml.ansible ts=2 sts=2 sw=2 et
