@@ -28,7 +28,7 @@
     - python3-devel
     - python3-pipx
     - ranger
-    - ripgrip
+    - ripgrep
     - rsync
     - shellcheck
     - starship
