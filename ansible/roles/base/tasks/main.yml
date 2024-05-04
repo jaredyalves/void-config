@@ -4,8 +4,39 @@
     name: "{{ item }}"
   loop:
     - base-devel
+    - bat
+    - bzip2
+    - curl
+    - fd
     - fish-shell
+    - fzf
+    - gnome-keyring
+    - gnupg
+    - go
+    - gzip
+    - htop
+    - jq
+    - lzop
+    - ncdu
+    - neovim
+    - net-tools
+    - openssh
+    - p7zip
+    - p7zip-unrar
+    - pinentry-gnome
+    - python3
+    - python3-devel
+    - python3-pipx
+    - ranger
+    - ripgrip
+    - rsync
+    - shellcheck
     - starship
+    - tmux
+    - unrar
+    - unzip
+    - wget
+    - whois
     - xmirror
     - xtools
 
