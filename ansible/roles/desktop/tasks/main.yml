@@ -4,6 +4,7 @@
     file: "{{ file }}.yml"
   loop:
     - desktop
+    - pipewire
     - suckless
   loop_control:
     loop_var: file
