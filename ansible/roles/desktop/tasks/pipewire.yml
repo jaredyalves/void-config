@@ -1,0 +1,40 @@
+---
+- name: Install packages
+  community.general.xbps:
+    name:
+      - alsa-pipewire
+      - alsa-utils
+      - libjack-pipewire
+      - pavucontrol
+      - pipewire
+      - pulseaudio-utils
+      - wireguard
+
+- name: Make sure directory exists
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - /etc/alsa/conf.d
+    - /etc/pipewire/pipewire.conf.d
+
+- name: Symlink 20-pipewire-pulse.conf file
+  ansible.builtin.file:
+    src: /usr/share/examples/pipewire/20-pipewire-pulse.conf
+    dest: /etc/pipewire/pipewire.conf.d/20-pipewire-pulse.conf
+    state: link
+
+- name: Symlink 50-pipewire.conf pulse
+  ansible.builtin.file:
+    src: /usr/share/alsa/alsa.conf.d/50-pipewire.conf
+    dest: /etc/alsa/conf.d/50-pipewire.conf
+    state: link
+
+- name: Symlink 99-pipewire-default.conf pulse
+  ansible.builtin.file:
+    src: /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf
+    dest: /etc/alsa/conf.d/99-pipewire-default.conf
+    state: link
+
+# vim: ft=yaml.ansible ts=2 sts=2 sw=2 et
