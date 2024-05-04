@@ -1,0 +1,11 @@
+---
+- name: Install packages
+  community.general.xbps:
+    name: "{{ item }}"
+  loop:
+    - font-awesome5
+    - nerd-fonts
+    - noto-fonts-emoji
+    - noto-fonts-ttf
+
+# vim: ft=yaml.ansible ts=2 sts=2 sw=2 et
