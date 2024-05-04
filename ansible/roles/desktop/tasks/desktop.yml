@@ -1,35 +1,35 @@
 ---
 - name: Install packages
   community.general.xbps:
-    name:
-      - dunst
-      - feh
-      - firefox
-      - gnome-themes-extra
-      - intel-media-driver
-      - intel-video-accel
-      - libreoffice
-      - libva-utils
-      - mesa
-      - mesa-demos
-      - mesa-dri
-      - mesa-vulkan-intel
-      - mpv
-      - nwg-look
-      - openvpn
-      - seahorse
-      - vlc
-      - vulkan-loader
-      - wireguard
-      - wireguard-tools
-      - xclip
-      - xdg-desktop-portal-gtk
-      - xdg-user-dirs
-      - xdg-utils
-      - xinit
-      - xorg-fonts
-      - xorg-minimal
-      - xsel
-
+    name: "{{ item }}"
+  loop:
+    - dunst
+    - feh
+    - firefox
+    - gnome-themes-extra
+    - intel-media-driver
+    - intel-video-accel
+    - libreoffice
+    - libva-utils
+    - mesa
+    - mesa-demos
+    - mesa-dri
+    - mesa-vulkan-intel
+    - mpv
+    - nwg-look
+    - openvpn
+    - seahorse
+    - vlc
+    - vulkan-loader
+    - wireguard
+    - wireguard-tools
+    - xclip
+    - xdg-desktop-portal-gtk
+    - xdg-user-dirs
+    - xdg-utils
+    - xinit
+    - xorg-fonts
+    - xorg-minimal
+    - xsel
 
 # vim: ft=yaml.ansible ts=2 sts=2 sw=2 et

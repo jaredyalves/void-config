@@ -1,14 +1,15 @@
 ---
 - name: Install packages
   community.general.xbps:
-    name:
-      - alsa-pipewire
-      - alsa-utils
-      - libjack-pipewire
-      - pavucontrol
-      - pipewire
-      - pulseaudio-utils
-      - wireguard
+    name: "{{ item }}"
+  loop:
+    - alsa-pipewire
+    - alsa-utils
+    - libjack-pipewire
+    - pavucontrol
+    - pipewire
+    - pulseaudio-utils
+    - wireguard
 
 - name: Make sure directory exists
   ansible.builtin.file:
