@@ -3,7 +3,9 @@
   community.general.xbps:
     name:
       - libX11-devel
+      - libXScrnSaver-devel
       - libXft-devel
       - libXinerama-devel
+      - libXrandr-devel
 
 # vim: ft=yaml.ansible ts=2 sts=2 sw=2 et
