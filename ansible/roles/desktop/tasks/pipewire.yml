@@ -9,7 +9,6 @@
     - pavucontrol
     - pipewire
     - pulseaudio-utils
-    - wireguard
 
 - name: Make sure directory exists
   ansible.builtin.file:
@@ -19,6 +18,12 @@
   loop:
     - /etc/alsa/conf.d
     - /etc/pipewire/pipewire.conf.d
+
+- name: Symlink 10-wireplumber.conf file
+  ansible.builtin.file:
+    src: /usr/share/examples/wireplumber/10-wireplumber.conf
+    dest: /etc/pipewire/pipewire.conf.d/10-wireplumber.conf
+    state: link
 
 - name: Symlink 20-pipewire-pulse.conf file
   ansible.builtin.file:
