@@ -3,12 +3,15 @@
   community.general.xbps:
     name: "{{ item }}"
   loop:
+    - dbus
     - dunst
+    - elogind
     - feh
     - firefox
     - gnome-themes-extra
     - intel-media-driver
     - intel-video-accel
+    - kitty
     - libreoffice
     - libva-utils
     - mesa
@@ -18,6 +21,7 @@
     - mpv
     - nwg-look
     - openvpn
+    - picom
     - seahorse
     - vlc
     - vulkan-loader
@@ -30,6 +34,7 @@
     - xinit
     - xorg-fonts
     - xorg-minimal
+    - xprop
     - xsel
 
 # vim: ft=yaml.ansible ts=2 sts=2 sw=2 et
